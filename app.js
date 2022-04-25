@@ -35,11 +35,11 @@ app.get("/predict", async (req, res) => {
     res.status(500).send({ error: true });
   }
 });
+app.get("/", (req, res) => {
+  res.send({ running: true });
+});
 app.listen(process.env.PORT, (err) => {
   if (!err) {
     console.log("listening");
   }
 });
-const test = async () => {
-  console.log(await predict("who you go to where "));
-};
