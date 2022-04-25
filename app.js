@@ -35,7 +35,7 @@ app.get("/predict", async (req, res) => {
     res.status(500).send({ error: true });
   }
 });
-app.listen(3001, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (!err) {
     console.log("listening");
   }
