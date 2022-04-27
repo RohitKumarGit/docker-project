@@ -5,7 +5,7 @@ app.use(express.json());
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 const predict = async function (text) {
