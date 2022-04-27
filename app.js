@@ -5,7 +5,7 @@ app.use(express.json());
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 const predict = async function (text) {
@@ -38,7 +38,7 @@ app.get("/predict", async (req, res) => {
 app.get("/", (req, res) => {
   res.send({ running: true });
 });
-app.listen(process.env.PORT, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
   if (!err) {
     console.log("listening");
   }
